@@ -13,11 +13,10 @@ export default function AllPostsPage() {
             setPosts(allPosts)
         }
         getPosts();
-    }, [posts]);
+    }, []);
 
     async function handleAddPost(postData) {
         const post = await postsAPI.add(postData);
-        console.log(post);
         setPosts([...posts, post]);
     }
 
