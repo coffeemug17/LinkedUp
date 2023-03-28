@@ -7,7 +7,6 @@ export default function NewPostForm({ handleAddPost }) {
     function handleSubmit(evt) {
         evt.preventDefault();
         handleAddPost(newPost);
-        console.log(handleAddPost(newPost), "this is what we want");
         setNewPost({content: ''});
     }
 

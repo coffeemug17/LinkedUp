@@ -2,8 +2,7 @@ import sendRequest from "./send-request";
 const BASE_URL = '/api/posts';
 
 export async function getAll() {
-    const getresponsePostData = await sendRequest(BASE_URL);
-    return getresponsePostData;
+    return sendRequest(BASE_URL);
 }
 
 export function add(postData) {
