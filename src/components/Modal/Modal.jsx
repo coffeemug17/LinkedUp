@@ -1,16 +1,16 @@
-import { useState } from "react";
 import "./Modal.css"
+import CommentForm from "../CommentForm/CommentForm";
 
-export default function Modal({ children, title }) {
-    const [comment, setComment] = useState(true);
+export default function Modal({ children, title, about, comment, setComment }) {
     return (
         <div className="Modal">
-            <header>{title}</header>
+            <header>{title} &nbsp; - &nbsp; {about}
+            </header>
             <div>{children}</div>
             <footer>
                 <button onClick={() => setComment(!comment)}
                 >Comments</button>
-                {comment ? <div></div> : <h1>no</h1>}
+                {comment ? <div></div> : <CommentForm />}
             </footer>
         </div>
       );
