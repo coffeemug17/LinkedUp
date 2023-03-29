@@ -1,7 +1,14 @@
+import Modal from "../Modal/Modal";
 export default function PostItem({ post }) {
+    // console.log(post);
     return (
         <>
-            {post.content}
+            <Modal title={post.user}>
+                <p>
+
+                {post.content}
+                </p>
+            </Modal>
             <hr />
         </>
     );

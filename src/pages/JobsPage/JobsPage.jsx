@@ -30,6 +30,7 @@ export default function JobsPage() {
                 <input type="text" onChange={handleFormChange} placeholder="Search for a Job!" value={searchItem}/>
                 <button type="submit">Submit Query</button>
             </form>
+            <hr />
             {allSearchResults}
         </>
     );

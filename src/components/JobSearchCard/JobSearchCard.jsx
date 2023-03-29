@@ -1,7 +1,13 @@
 export default function JobSearchCard({ result }) {
+    console.log(result);
     return (
         <>
-            <h1>Job Card</h1>
+            {result.title}
+            &nbsp; | &nbsp;
+            {result.company.display_name}
+            &nbsp; - &nbsp;
+            {result.location.display_name}
+            <hr />
         </>
     );
 }

@@ -8,3 +8,7 @@ export async function getAll() {
 export function add(postData) {
     return sendRequest(BASE_URL, 'POST', postData);
 }
+
+export function getUser() {
+    return sendRequest(BASE_URL)
+}
