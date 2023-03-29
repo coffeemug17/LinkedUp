@@ -11,19 +11,21 @@ module.exports = {
 async function search(req, res) {
     const searchItem = req.query.searchItem;
     if (!searchItem) return null;
-    const jobs = await Job.find({searchItem: searchItem}, 'results');
-    console.log(jobs);
-    if (jobs !== []) {
-        const results = jobs.map(({ 
-            id, title, company, location, description, redirect_url, salary_max, salary_min }) => ({
-            id, title, company, location, description, redirect_url, salary_max, salary_min
-            }));
-            return res.json(results)
-    }
-    const url = `${BASE_URL}/1?app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&results_per_page=1&what=${searchItem}&content-type=application/json`
+    const jobs = await Job.find({}, 'id');
+    console.log(jobs, "this is line 15");
+    const existingJobIds = new Set(jobs.map(job => job.id));
+
+    // if (jobs !== []) {
+    //     const results = jobs.map(({ 
+    //         id, title, company, location, description, redirect_url, salary_max, salary_min }) => ({
+    //         id, title, company, location, description, redirect_url, salary_max, salary_min
+    //         }));
+    //         return res.json(results)
+    // }
+    const url = `${BASE_URL}/1?app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&results_per_page=5&what=${searchItem}&content-type=application/json`
     const response = await fetch(url);
     const searchData = await response.json()
-    const jobsToCreate = searchData.results.map(job => {
+    const jobsToCreate = searchData.results.filter(job => !existingJobIds.has(job.id)).map(job => {
         return {
             title: job.title,
             id: job.id,
@@ -35,10 +37,11 @@ async function search(req, res) {
             salary_min: job.salary_min
         }
     });
-    console.log(jobsToCreate);
-    const existingJobIds = new Set((jobs && jobs.results) ?
-        jobs.results.map(job => job.id) : []);
-    const newJobsToCreate = jobsToCreate.filter(job => existingJobIds.has(job.id));
-    const result = await Job.insertMany(newJobsToCreate);
-    res.json(result);
+    if (jobsToCreate.length > 0) {
+        await Job.insertMany(jobsToCreate);
+    }
+    console.log(jobsToCreate, "this is line 38");
+    // const newJobsToCreate = jobsToCreate.filter(job => existingJobIds.has(job.id));
+const results = await Job.find({'title': {$regex: searchItem, $options: 'i'}});
+    res.json(results);
 } 

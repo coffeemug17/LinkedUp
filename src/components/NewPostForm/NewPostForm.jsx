@@ -1,9 +1,6 @@
 import { useState } from "react";
 
-export default function NewPostForm({ handleAddPost }) {
-    const [newPost, setNewPost] = useState({
-        content: ''
-    });
+export default function NewPostForm({ handleAddPost, newPost, setNewPost }) {
     function handleSubmit(evt) {
         evt.preventDefault();
         handleAddPost(newPost);

@@ -6,7 +6,8 @@ module.exports = {
 };
 
 async function getAll(req, res) {
-    const posts = await Post.find({});
+    const posts = await Post.find({}).populate('user').exec();
+    console.log(posts);
     res.json(posts);
 }
 

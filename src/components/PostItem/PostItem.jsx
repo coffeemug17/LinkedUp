@@ -3,7 +3,7 @@ export default function PostItem({ post }) {
     // console.log(post);
     return (
         <>
-            <Modal title={post.user}>
+            <Modal title={post.user.name}>
                 <p>
 
                 {post.content}

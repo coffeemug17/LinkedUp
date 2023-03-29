@@ -4,9 +4,9 @@ export default function JobSearchCard({ result }) {
         <>
             {result.title}
             &nbsp; | &nbsp;
-            {result.company.display_name}
+            {result.company}
             &nbsp; - &nbsp;
-            {result.location.display_name}
+            {result.location}
             <hr />
         </>
     );
