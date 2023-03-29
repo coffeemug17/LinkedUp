@@ -29,7 +29,7 @@ export default function AllPostsPage() {
         <>
             <h1>All Posts Page</h1>
             <button onClick={() => setCreatePost(!createPost)}>Make A Post?</button>
-            <NewPostForm handleAddPost={handleAddPost} newPost={newPost} setNewPost={setNewPost} />
+            {createPost ? <NewPostForm handleAddPost={handleAddPost} newPost={newPost} setNewPost={setNewPost} /> : <div></div>}
             <h3>All Posts</h3>
             {allPosts}
         </>

@@ -1,5 +1,4 @@
 export default function JobSearchCard({ result }) {
-    console.log(result);
     return (
         <>
             {result.title}
