@@ -1,8 +1,9 @@
-export default function CommentCard({ comment }) {
-    console.log(comment, 'this');
+export default function CommentCard({ comment, user }) {
+    // console.log(comment.co, 'this');
     return (
         <>
-            {comment}
+            {comment.content}
+            {user}
             <hr />
         </>
     );

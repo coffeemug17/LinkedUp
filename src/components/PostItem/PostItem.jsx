@@ -2,17 +2,11 @@ import { useState } from "react";
 import Modal from "../Modal/Modal";
 import CommentCard from "../CommentCard/CommentCard";
 
-export default function PostItem({ post }) {
-    const [comments, setComments] = useState(null);
+export default function PostItem({ post, setPosts, posts, setComment }) {
     const [viewComment, setViewComment] = useState(true);
-    if (post.comments) {
-        const mappedComments = post.comments.map((comment,idx) => <CommentCard comment={comment} key={idx} />);
-    } else {
-        const mappedComments = null
-    }
     return (
         <>
-            <Modal title={post.user.name} about={post.user.about} viewComment={viewComment} setViewComment={setViewComment} post={post} mappedComments={mappedComments} >
+            <Modal title={post.user.name} about={post.user.about} viewComment={viewComment} setViewComment={setViewComment} post={post} posts={posts} setPosts={setPosts} setComment={setComment} >
                 <p>
                 {post.content}
                 </p>

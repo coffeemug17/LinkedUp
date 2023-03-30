@@ -4,8 +4,7 @@ import * as commentsAPI from "../../utilities/comments-api";
 import * as postsAPI from "../../utilities/posts-api";
 import CommentCard from "../CommentCard/CommentCard";
 
-export default function CommentForm({ post }) {
-    const [comments, setComments] = useState([]);
+export default function CommentForm({ post, setPosts, posts, setComment }) {
     const [newComment, setNewComment] = useState({content: ''});
 
     function handleCommentFormSubmit(evt) {
@@ -20,7 +19,10 @@ export default function CommentForm({ post }) {
 
     async function handleAddComment(commentData) {
         const comment = await commentsAPI.add(commentData, post._id);
-        setComments([...comments, comment]);
+        const updatedPosts = posts.map(p => p._id === comment._id ? comment : p);
+        setPosts(updatedPosts);
+        const updatePost = {...comment}
+        setComment(updatePost);
     }
 
     return (

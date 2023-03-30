@@ -7,6 +7,7 @@ import PostItem from "../../components/PostItem/PostItem";
 export default function AllPostsPage() {
     const [posts, setPosts] = useState([]);
     const [createPost, setCreatePost] = useState(false);
+    const [comment, setComment] = useState([]);
     const [newPost, setNewPost] = useState({
         content: ''
     });
@@ -17,14 +18,14 @@ export default function AllPostsPage() {
             setPosts(allPosts)
         }
         getPosts();
-    }, [newPost]);
+    }, [newPost, comment]);
 
     async function handleAddPost(postData) {
         const post = await postsAPI.add(postData);
         setPosts([...posts, post]);
     }
 
-    const allPosts = posts.map((post, idx) => <PostItem post={post} key={idx} />);
+    const allPosts = posts.map((post, idx) => <PostItem post={post} key={idx} setPosts={setPosts} posts={posts} setComment={setComment} />);
     return (
         <>
             <h1>All Posts Page</h1>
