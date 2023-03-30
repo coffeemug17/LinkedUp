@@ -1,16 +1,22 @@
 import "./Modal.css"
 import CommentForm from "../CommentForm/CommentForm";
 
-export default function Modal({ children, title, about, comment, setComment }) {
+export default function Modal({ children, title, about, viewComment, setViewComment, post, mappedComments }) {
+
     return (
         <div className="Modal">
             <header>{title} &nbsp; - &nbsp; {about}
             </header>
             <div>{children}</div>
             <footer>
-                <button onClick={() => setComment(!comment)}
+                <button onClick={() => setViewComment(!viewComment)}
                 >Comments</button>
-                {comment ? <div></div> : <CommentForm />}
+                {viewComment ? <div></div> : 
+                <>
+                    <CommentForm post={post} />
+                    {mappedComments}
+                </>
+                }
             </footer>
         </div>
       );
