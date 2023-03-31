@@ -25,7 +25,14 @@ export default function AllPostsPage() {
         setPosts([...posts, post]);
     }
 
-    const allPosts = posts.map((post, idx) => <PostItem post={post} key={idx} setPosts={setPosts} posts={posts} setComment={setComment} />);
+    async function handleDeletePost(postId) {
+        const updatedPosts = await postsAPI.deletePost(postId);
+        const remainingPosts = posts.filter((post) => post._id !== postId);
+        setPosts(remainingPosts);
+    }
+
+    const allPosts = posts.map((post, idx) => 
+    <PostItem post={post} key={idx} setPosts={setPosts} posts={posts} setComment={setComment} handleDeletePost={handleDeletePost} />);
     return (
         <>
             <h1>All Posts Page</h1>

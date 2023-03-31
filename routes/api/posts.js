@@ -9,4 +9,7 @@ router.get('/', postsCtrl.getAll);
 //POST /api/posts
 router.post('/', ensureLoggedIn ,postsCtrl.create);
 
+//DELETE /api/posts/:id
+router.delete('/:id', ensureLoggedIn, postsCtrl.deletePost);
+
 module.exports = router

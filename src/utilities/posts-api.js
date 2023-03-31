@@ -9,3 +9,6 @@ export function add(postData) {
     return sendRequest(BASE_URL, 'POST', postData);
 }
 
+export async function deletePost(postId) {
+    return sendRequest(`${BASE_URL}/${postId}`, 'DELETE');
+}

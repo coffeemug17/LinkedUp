@@ -4,7 +4,7 @@ import CommentCard from "../CommentCard/CommentCard";
 import * as commentsAPI from "../../utilities/comments-api";
 
 
-export default function PostItem({ post, setPosts, posts, setComment }) {
+export default function PostItem({ post, setPosts, posts, setComment, handleDeletePost }) {
     const [viewComment, setViewComment] = useState(true);
 
     async function handleDeleteComment(id) {
@@ -25,6 +25,7 @@ export default function PostItem({ post, setPosts, posts, setComment }) {
             >
                 <p>
                 {post.content}
+                <button onClick={() => handleDeletePost(post._id)}>Delete Post</button>
                 </p>
             </Modal>
             <hr />
