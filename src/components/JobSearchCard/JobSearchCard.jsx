@@ -20,6 +20,9 @@ export default function JobSearchCard({ result }) {
                         <div>
                             Projected Salary: {projected_salary}
                         </div>
+                        <div>
+                            <button>Save Job!</button>
+                        </div>
                     </div>
                     :
                     <div></div> 
