@@ -1,0 +1,20 @@
+.JobSearchCard {
+	width: 500px;
+	margin: 10px;
+	border: 3px solid gray;
+	border-radius: 10px;
+    display: grid;
+}
+
+.JobSearchCard header {
+	color: gray;
+	font-size: 26px;
+	padding: 10px 5px 0 10px;
+}
+
+.JobSearchCard > div {
+	margin: 10px 0;
+	padding: 10px 10px 20px;
+	border-top: 3px solid gray;
+	border-bottom: 3px solid gray;
+}

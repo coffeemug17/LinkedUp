@@ -25,6 +25,7 @@ export default function CommentForm({ post, setPosts, posts, setComment }) {
         setComment(updatePost);
     }
 
+
     return (
         <>
             <form onSubmit={handleCommentFormSubmit}>

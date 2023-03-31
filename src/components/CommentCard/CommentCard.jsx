@@ -1,9 +1,10 @@
-export default function CommentCard({ comment, user }) {
-    // console.log(comment.co, 'this');
+export default function CommentCard({ comment, user, handleDeleteComment }) {
     return (
         <>
-            {comment.content}
             {user}
+            &nbsp; - &nbsp;
+            {comment.content}
+            <button onClick={() => handleDeleteComment(comment._id)} >DELETE</button>
             <hr />
         </>
     );

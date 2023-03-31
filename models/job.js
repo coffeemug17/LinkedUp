@@ -7,6 +7,7 @@ const jobSchema = new Schema({
     company: {type: String, required: true},
     salary_max: {type: Number, required: true},
     salary_min: {type: Number, required: true},
+    location: {type: String, required: true},
     id: {type: String, required: true},
     redirect_url: {type: String, required: true},
 });
