@@ -7,6 +7,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import HomePage from "../../pages/HomePage/HomePage";
 import AllPostsPage from '../AllPostsPage/AllPostsPage';
 import JobsPage from '../JobsPage/JobsPage';
+import SavedJobsPage from '../SavedJobsPage/SavedJobsPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -21,6 +22,7 @@ export default function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/posts" element={<AllPostsPage />} />
               <Route path="/jobs" element={<JobsPage />} />
+              <Route path="/myjobs" element={<SavedJobsPage />} />
             </Routes>
           </>
           :

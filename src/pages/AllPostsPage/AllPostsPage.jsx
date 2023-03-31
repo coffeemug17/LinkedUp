@@ -32,7 +32,10 @@ export default function AllPostsPage() {
     }
 
     const allPosts = posts.map((post, idx) => 
-    <PostItem post={post} key={idx} setPosts={setPosts} posts={posts} setComment={setComment} handleDeletePost={handleDeletePost} />);
+        <PostItem post={post} key={idx} 
+            setPosts={setPosts} posts={posts} 
+            setComment={setComment} handleDeletePost={handleDeletePost} 
+        />);
     return (
         <>
             <h1>All Posts Page</h1>
