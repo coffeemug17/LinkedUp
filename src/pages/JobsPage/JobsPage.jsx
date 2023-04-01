@@ -21,8 +21,13 @@ export default function JobsPage() {
         setSearchItem(evt.target.value);
     }
 
+    async function handleAddSavedJobs(id) {
+        const job = await jobsAPI.saveJob(id);
+        console.log(job);
+    }
+
     const allSearchResults = searchResults.map((result, idx) => 
-        <JobSearchCard result={result} key={idx} />);
+        <JobSearchCard result={result} key={idx} handleAddSavedJobs={handleAddSavedJobs} />);
     return (
         <>
             <h1>All Jobs</h1>

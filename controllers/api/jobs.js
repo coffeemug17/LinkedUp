@@ -5,7 +5,9 @@ const YOUR_APP_ID = process.env.APP_ID;
 const YOUR_APP_KEY = process.env.APP_KEY;
 
 module.exports = {
-    search
+    search,
+    saveJob,
+    getSavedJobs
 };
 
 async function search(req, res) {
@@ -33,4 +35,17 @@ async function search(req, res) {
     }
 const results = await Job.find({'title': {$regex: searchItem, $options: 'i'}});
     res.json(results);
+} 
+
+async function saveJob(req, res) {
+    const job = await Job.findById(req.params.id);
+    job.users.push(req.user._id);
+    await job.save();
+    res.json(job); 
+}
+
+async function getSavedJobs(req, res) {
+    const jobs = await Job.find({})
+    console.log(jobs, 'This is what we are currently targeting')
+    res.json(jobs);
 } 

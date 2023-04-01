@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./JobSearchCard.css"
 
-export default function JobSearchCard({ result }) {
+export default function JobSearchCard({ result, handleAddSavedJobs }) {
     const [extendJob, setExtendJob] = useState(false);
     const projected_salary = (result.salary_max + result.salary_min)/2;
     return (
@@ -18,10 +18,10 @@ export default function JobSearchCard({ result }) {
                             <a href={result.redirect_url}>Apply here!!</a>
                         </div>
                         <div>
-                            Projected Salary: {projected_salary}
+                            Projected Salary: ${projected_salary}
                         </div>
                         <div>
-                            <button>Save Job!</button>
+                            <button onClick={() => handleAddSavedJobs(result._id)}>Save Job!</button>
                         </div>
                     </div>
                     :
