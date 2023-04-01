@@ -46,6 +46,6 @@ async function saveJob(req, res) {
 
 async function getSavedJobs(req, res) {
     const jobs = await Job.find({})
-    console.log(jobs, 'This is what we are currently targeting')
-    res.json(jobs);
+    const updatedJobs = jobs.filter((job) => job.users.includes(req.user._id))
+    res.json(updatedJobs);
 } 

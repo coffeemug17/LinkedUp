@@ -8,4 +8,7 @@ router.get('/search', ensureLoggedIn, jobsCtrl.search);
 // POST /api/jobs/:id 
 router.post('/:id', ensureLoggedIn, jobsCtrl.saveJob);
 
+// GET /api/jobs
+router.get('/', ensureLoggedIn, jobsCtrl.getSavedJobs);
+
 module.exports = router;

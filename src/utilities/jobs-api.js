@@ -9,3 +9,7 @@ export async function getSearch(searchData) {
 export async function saveJob(jobId) {
     return sendRequest(`${BASE_URL}/${jobId}`, 'POST');
 }
+
+export async function getSavedJobs() {
+    return sendRequest(BASE_URL);
+}
