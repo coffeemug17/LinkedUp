@@ -1,6 +1,8 @@
 import "./Modal.css"
 import CommentForm from "../CommentForm/CommentForm";
 import CommentCard from "../CommentCard/CommentCard";
+import * as postsAPI from "../../utilities/posts-api";
+import { useEffect } from "react";
 
 export default function Modal({ user, children, title, about, viewComment, setViewComment, post, posts, setPosts, setComment, handleDeleteComment, handleAddLike }) {
     const mappedComments = post.comments.map((comment,idx) => 
@@ -9,12 +11,31 @@ export default function Modal({ user, children, title, about, viewComment, setVi
             handleDeleteComment={handleDeleteComment} 
             user={user}
         />);
+    
+    // useEffect(function() {
+    //     async function getPosts() {
+    //         await postsAPI.getAll();
+    //     }
+    //     getPosts();
+    // }, [handleAddLike])
     return (
         <div className="Modal">
             <header>{title} &nbsp; - &nbsp; {about}
             </header>
             <div>{children}</div>
             <footer>
+            <h4>
+                    {(post.likes.length !== 1)
+                        ?
+                        <>
+                        {post.likes.length} likes!
+                        </>
+                        :
+                        <>
+                        {post.likes.length} like!
+                        </>
+                    } 
+                </h4>
                 <h4>
                     {(mappedComments.length !== 1)
                         ?

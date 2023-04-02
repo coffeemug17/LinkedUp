@@ -5,7 +5,7 @@ import * as commentsAPI from "../../utilities/comments-api";
 import * as postsAPI from "../../utilities/posts-api";
 
 
-export default function PostItem({ user, post, setPosts, posts, setComment, handleDeletePost }) {
+export default function PostItem({ user, post, setPosts, posts, setComment, handleDeletePost, like, setLike }) {
     const [viewComment, setViewComment] = useState(true);
 
     async function handleDeleteComment(id) {
@@ -15,6 +15,7 @@ export default function PostItem({ user, post, setPosts, posts, setComment, hand
 
     async function handleAddLike(postId) {
         const likedPost = await postsAPI.addLike(postId);
+        setLike(!like);
     }
 
     return (

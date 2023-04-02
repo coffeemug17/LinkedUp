@@ -8,6 +8,7 @@ export default function AllPostsPage({ user }) {
     const [posts, setPosts] = useState([]);
     const [createPost, setCreatePost] = useState(false);
     const [comment, setComment] = useState([]);
+    const [like, setLike] = useState(null);
     const [newPost, setNewPost] = useState({
         content: ''
     });
@@ -18,7 +19,7 @@ export default function AllPostsPage({ user }) {
             setPosts(allPosts)
         }
         getPosts();
-    }, [newPost, comment]);
+    }, [newPost, comment, like]);
 
     async function handleAddPost(postData) {
         const post = await postsAPI.add(postData);
@@ -34,6 +35,7 @@ export default function AllPostsPage({ user }) {
     const allPosts = posts.map((post, idx) => 
         <PostItem post={post} key={idx} user={user}
             setPosts={setPosts} posts={posts} 
+            like={like} setLike={setLike}
             setComment={setComment} handleDeletePost={handleDeletePost} 
         />);
     return (
