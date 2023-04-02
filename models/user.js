@@ -18,10 +18,15 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+  company: {
+    type: String,
+    required: true
+  },
   password: {
     type: String,
     required: true
-  }
+  },
+  following: [{ type: Schema.Types.ObjectId, ref: 'User', required: true }]
 }, {
   timestamps: true,
   toJSON: {

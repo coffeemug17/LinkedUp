@@ -5,6 +5,7 @@ const User = require('../../models/user');
 module.exports = {
   create,
   login,
+  search
 };
 
 async function create(req, res) {
@@ -29,6 +30,14 @@ async function login(req, res) {
   } catch (err) {
     res.status(400).json('Bad Credentials');
   }
+}
+
+async function search(req, res) {
+  const searchUser = req.query.searchUser;
+  if(!searchUser) return null;
+  const users = await User.find({'name': {$regex: searchUser, $options: 'i'}});
+  console.log(users);
+  res.json(users);
 }
 
 /*--- Helper Functions --*/
