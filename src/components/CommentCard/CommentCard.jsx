@@ -1,10 +1,15 @@
-export default function CommentCard({ comment, user, handleDeleteComment }) {
+export default function CommentCard({ comment, user, userComment, handleDeleteComment }) {
     return (
         <>
-            {user}
+            {userComment}
             &nbsp; - &nbsp;
             {comment.content}
-            <button onClick={() => handleDeleteComment(comment._id)} >DELETE</button>
+            {user._id === comment.user._id 
+                ?
+                <button onClick={() => handleDeleteComment(comment._id)} >DELETE</button>
+                :
+                <></>
+            }
             <hr />
         </>
     );

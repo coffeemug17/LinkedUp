@@ -32,7 +32,7 @@ export default function AllPostsPage({ user }) {
     }
 
     const allPosts = posts.map((post, idx) => 
-        <PostItem post={post} key={idx} 
+        <PostItem post={post} key={idx} user={user}
             setPosts={setPosts} posts={posts} 
             setComment={setComment} handleDeletePost={handleDeletePost} 
         />);
