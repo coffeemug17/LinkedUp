@@ -23,7 +23,6 @@ export default function JobsPage() {
 
     async function handleAddSavedJobs(id) {
         const job = await jobsAPI.saveJob(id);
-        console.log(job);
     }
 
     const allSearchResults = searchResults.map((result, idx) => 

@@ -39,7 +39,11 @@ const results = await Job.find({'title': {$regex: searchItem, $options: 'i'}});
 
 async function saveJob(req, res) {
     const job = await Job.findById(req.params.id);
-    job.users.push(req.user._id);
+    if (job.users.includes(req.user._id)) {
+        job.users.remove(req.user._id)
+    } else {
+        job.users.push(req.user._id);
+    }
     await job.save();
     res.json(job); 
 }
