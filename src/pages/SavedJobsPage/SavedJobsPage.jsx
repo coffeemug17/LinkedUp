@@ -3,7 +3,7 @@ import { useState } from "react";
 import JobSearchCard from "../../components/JobSearchCard/JobSearchCard";
 import * as jobsAPI from "../../utilities/jobs-api";
 
-export default function SavedJobsPage() {
+export default function SavedJobsPage({ user }) {
     const [savedJobs, setSavedJobs] = useState([]);
 
     useEffect(function() {

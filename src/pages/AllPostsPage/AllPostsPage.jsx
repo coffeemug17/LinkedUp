@@ -4,7 +4,7 @@ import * as postsAPI from "../../utilities/posts-api";
 import NewPostForm from "../../components/NewPostForm/NewPostForm";
 import PostItem from "../../components/PostItem/PostItem";
 
-export default function AllPostsPage() {
+export default function AllPostsPage({ user }) {
     const [posts, setPosts] = useState([]);
     const [createPost, setCreatePost] = useState(false);
     const [comment, setComment] = useState([]);

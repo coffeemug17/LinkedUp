@@ -2,7 +2,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import { Routes, Route } from "react-router-dom";
 import AuthPage from "../AuthPage/AuthPage";
 
-export default function HomePage() {
+export default function HomePage({ user }) {
     return (
         <>
             {/* <NavBar /> */}

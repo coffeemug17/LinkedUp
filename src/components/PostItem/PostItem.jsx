@@ -11,7 +11,6 @@ export default function PostItem({ post, setPosts, posts, setComment, handleDele
         const comment = await commentsAPI.deleteComment(id);
         setComment(comment);
     }
-
     return (
         <>
             <Modal 
