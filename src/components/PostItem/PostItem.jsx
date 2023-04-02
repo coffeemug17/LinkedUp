@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from "../Modal/Modal";
 import CommentCard from "../CommentCard/CommentCard";
 import * as commentsAPI from "../../utilities/comments-api";
+import * as postsAPI from "../../utilities/posts-api";
 
 
 export default function PostItem({ user, post, setPosts, posts, setComment, handleDeletePost }) {
@@ -11,6 +12,11 @@ export default function PostItem({ user, post, setPosts, posts, setComment, hand
         const comment = await commentsAPI.deleteComment(id);
         setComment(comment);
     }
+
+    async function handleAddLike(postId) {
+        const likedPost = await postsAPI.addLike(postId);
+    }
+
     return (
         <>
             <Modal 
@@ -20,7 +26,7 @@ export default function PostItem({ user, post, setPosts, posts, setComment, hand
                 setViewComment={setViewComment} 
                 post={post} posts={posts} setPosts={setPosts} 
                 setComment={setComment} 
-                user={user}
+                user={user} handleAddLike={handleAddLike}
                 handleDeleteComment={handleDeleteComment}
             >
                 <p>

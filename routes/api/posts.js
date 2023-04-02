@@ -12,4 +12,7 @@ router.post('/', ensureLoggedIn ,postsCtrl.create);
 //DELETE /api/posts/:id
 router.delete('/:id', ensureLoggedIn, postsCtrl.deletePost);
 
+// GET /api/posts/:id
+router.post('/:id', ensureLoggedIn, postsCtrl.addLike);
+
 module.exports = router
