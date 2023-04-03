@@ -1,7 +1,8 @@
 import { useState } from "react";
 import * as usersAPI from "../../utilities/users-api";
+import UserCard from "../UserCard/UserCard";
 
-export default function SearchUser() {
+export default function SearchUser({ user }) {
     const [searchResults, setSearchResults] = useState([]);
     const [searchUser, setSearchUser] = useState('');
 
@@ -19,12 +20,15 @@ export default function SearchUser() {
         setSearchUser(evt.target.value);
     }
 
+
+    const mappedUsers = searchResults.map((searchedUser, idx) => <UserCard searchedUser={searchedUser} key={idx} user={user} />);
     return (
         <>
             <form onSubmit={handleSearchSubmit}>
                 <input type="text" onChange={handleSearchChange} placeholder="Search for users!" name="searchUser" value={searchUser} />
                 <button type="submit">Search User</button>
             </form>
+            {mappedUsers}
         </>
     );
 }

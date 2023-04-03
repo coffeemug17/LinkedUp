@@ -5,7 +5,8 @@ const User = require('../../models/user');
 module.exports = {
   create,
   login,
-  search
+  search,
+  follow
 };
 
 async function create(req, res) {
@@ -36,8 +37,18 @@ async function search(req, res) {
   const searchUser = req.query.searchUser;
   if(!searchUser) return null;
   const users = await User.find({'name': {$regex: searchUser, $options: 'i'}});
-  console.log(users);
   res.json(users);
+}
+
+async function follow(req, res) {
+  const user = await User.findById(req.user._id);
+    if (user.following.includes(req.params.id)) {
+        user.following.remove(req.params.id)
+    } else {
+        user.following.push(req.params.id);
+    }
+    await user.save();
+    res.json(user);
 }
 
 /*--- Helper Functions --*/

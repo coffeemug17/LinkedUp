@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from 'react-bootstrap/Button';
 import "./JobSearchCard.css"
 
 export default function JobSearchCard({ result, handleAddSavedJobs }) {

@@ -9,6 +9,7 @@ import AllPostsPage from '../AllPostsPage/AllPostsPage';
 import JobsPage from '../JobsPage/JobsPage';
 import SavedJobsPage from '../SavedJobsPage/SavedJobsPage';
 import MyNetworkPage from '../MyNetworkPage/MyNetworkPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
   const [user, setUser] = useState(getUser());

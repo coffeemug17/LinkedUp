@@ -4,7 +4,7 @@ export default function MyNetworkPage({ user }) {
     return (
         <>
             <h1>My Network</h1>
-            <SearchUser />
+            <SearchUser user={user} />
         </>
     );
 }

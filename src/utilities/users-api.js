@@ -13,3 +13,7 @@ export async function login(credentials) {
 export async function getUserSearch(searchData) {
     return sendRequest(`${BASE_URL}/search?searchUser=${searchData}`);
 }
+
+export async function followUser(userId) {
+    return sendRequest(`${BASE_URL}/${userId}`, 'POST');
+}

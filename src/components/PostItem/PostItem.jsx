@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Modal from "../Modal/Modal";
 import CommentCard from "../CommentCard/CommentCard";
+import Button from 'react-bootstrap/Button';
 import * as commentsAPI from "../../utilities/comments-api";
 import * as postsAPI from "../../utilities/posts-api";
 
