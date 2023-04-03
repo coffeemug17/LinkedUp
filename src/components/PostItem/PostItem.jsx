@@ -24,6 +24,7 @@ export default function PostItem({ user, post, setPosts, posts, setComment, hand
             <Modal 
                 title={post.user.name} 
                 about={post.user.about} 
+                company={post.user.company}
                 viewComment={viewComment} 
                 setViewComment={setViewComment} 
                 post={post} posts={posts} setPosts={setPosts} 

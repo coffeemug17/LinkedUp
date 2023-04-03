@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import * as userService from '../../utilities/users-service';
 import Nav from 'react-bootstrap/Nav';
+import "./NavBar.css"
 
 export default function NavBar({ user, setUser }) {
   function handleLogOut() {
@@ -9,7 +10,7 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <>
+    <div className='NavBar'>
     {user ? 
       <nav>
         <Link to="/">Home</Link>
@@ -32,6 +33,6 @@ export default function NavBar({ user, setUser }) {
         <Link to="/authorization">Log In/Sign Up</Link>
       </nav>
     }
-    </>
+    </div>
   );
 }

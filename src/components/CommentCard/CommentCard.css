@@ -1,0 +1,5 @@
+.CommentCard > div {
+    display: grid;
+    justify-content: left;
+    margin: 10px;
+}

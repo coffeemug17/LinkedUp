@@ -4,7 +4,7 @@ import CommentCard from "../CommentCard/CommentCard";
 import * as postsAPI from "../../utilities/posts-api";
 import { useEffect } from "react";
 
-export default function Modal({ user, children, title, about, viewComment, setViewComment, post, posts, setPosts, setComment, handleDeleteComment, handleAddLike }) {
+export default function Modal({ user, company, children, title, about, viewComment, setViewComment, post, posts, setPosts, setComment, handleDeleteComment, handleAddLike }) {
     const mappedComments = post.comments.map((comment,idx) => 
         <CommentCard comment={comment} 
             key={idx} userComment={comment.user.name} 
@@ -12,15 +12,9 @@ export default function Modal({ user, children, title, about, viewComment, setVi
             user={user}
         />);
     
-    // useEffect(function() {
-    //     async function getPosts() {
-    //         await postsAPI.getAll();
-    //     }
-    //     getPosts();
-    // }, [handleAddLike])
     return (
         <div className="Modal">
-            <header>{title} &nbsp; - &nbsp; {about}
+            <header>{title} &nbsp; - &nbsp; {about} at {company}
             </header>
             <div>{children}</div>
             <footer>
