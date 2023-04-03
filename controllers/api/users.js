@@ -6,7 +6,8 @@ module.exports = {
   create,
   login,
   search,
-  follow
+  follow,
+  getFollowing
 };
 
 async function create(req, res) {
@@ -49,6 +50,13 @@ async function follow(req, res) {
     }
     await user.save();
     res.json(user);
+}
+
+async function getFollowing(req, res) {
+  const user = await User.findById(req.user._id).populate('following').exec();
+  const followingUsers = user.following;
+  const updatedFollowing = followingUsers.filter((follower) => follower !== null);
+  res.json(updatedFollowing);
 }
 
 /*--- Helper Functions --*/

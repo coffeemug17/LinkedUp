@@ -2,11 +2,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import * as usersAPI from "../../utilities/users-api";
 
-export default function UserCard({ searchedUser, user }) {
+export default function UserCard({ searchedUser, user, handleFollowUser }) {
 
-    async function handleFollowUser(id) {
-        const user = usersAPI.followUser(id);
-    }
 
     return (
         <Card>

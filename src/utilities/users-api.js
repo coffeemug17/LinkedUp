@@ -17,3 +17,7 @@ export async function getUserSearch(searchData) {
 export async function followUser(userId) {
     return sendRequest(`${BASE_URL}/${userId}`, 'POST');
 }
+
+export async function getFollowingUsers() {
+    return sendRequest(BASE_URL);
+}

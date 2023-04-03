@@ -20,8 +20,11 @@ export default function SearchUser({ user }) {
         setSearchUser(evt.target.value);
     }
 
+    async function handleFollowUser(id) {
+        const user = usersAPI.followUser(id);
+    }
 
-    const mappedUsers = searchResults.map((searchedUser, idx) => <UserCard searchedUser={searchedUser} key={idx} user={user} />);
+    const mappedUsers = searchResults.map((searchedUser, idx) => <UserCard searchedUser={searchedUser} key={idx} user={user} handleFollowUser={handleFollowUser} />);
     return (
         <>
             <form onSubmit={handleSearchSubmit}>

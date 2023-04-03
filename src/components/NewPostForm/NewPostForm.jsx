@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Form from 'react-bootstrap/Form';
 
 export default function NewPostForm({ handleAddPost, newPost, setNewPost }) {
     function handleSubmit(evt) {
@@ -10,7 +11,6 @@ export default function NewPostForm({ handleAddPost, newPost, setNewPost }) {
     function handleChange(evt) {
         setNewPost({...newPost, [evt.target.name]: evt.target.value})
     }
-
     return (
         <>
             <form onSubmit={handleSubmit}>

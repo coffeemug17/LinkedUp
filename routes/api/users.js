@@ -17,4 +17,7 @@ router.get('/search', ensureLoggedIn, usersCtrl.search);
 // POST /api/users/:id 
 router.post('/:id', ensureLoggedIn, usersCtrl.follow);
 
+//GET /api/users
+router.get('/', ensureLoggedIn, usersCtrl.getFollowing);
+
 module.exports = router;
