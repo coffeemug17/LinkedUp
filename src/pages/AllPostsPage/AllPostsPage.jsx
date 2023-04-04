@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import * as postsAPI from "../../utilities/posts-api";
 import NewPostForm from "../../components/NewPostForm/NewPostForm";
 import PostItem from "../../components/PostItem/PostItem";
 import Button from 'react-bootstrap/Button';
+import "./AllPostsPage.css";
 
 export default function AllPostsPage({ user }) {
     const [posts, setPosts] = useState([]);
@@ -40,12 +40,10 @@ export default function AllPostsPage({ user }) {
             setComment={setComment} handleDeletePost={handleDeletePost} 
         />);
     return (
-        <>
-            <h1>All Posts Page</h1>
+        <div className="AllPostsPage">
             <Button variant="primary" onClick={() => setCreatePost(!createPost)}>Make A Post?</Button>
-            {createPost ? <NewPostForm handleAddPost={handleAddPost} newPost={newPost} setNewPost={setNewPost} /> : <div></div>}
-            <h3>All Posts</h3>
+            {createPost ? <NewPostForm handleAddPost={handleAddPost} newPost={newPost} setNewPost={setNewPost} createPost={createPost} setCreatePost={setCreatePost} /> : <div></div>}
             {allPosts}
-        </>
+        </div>
     );
 }

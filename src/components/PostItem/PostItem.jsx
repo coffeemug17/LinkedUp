@@ -36,7 +36,7 @@ export default function PostItem({ user, post, setPosts, posts, setComment, hand
                 {post.content}
                 {user._id === post.user._id 
                     ?
-                    <button onClick={() => handleDeletePost(post._id)}>Delete Post</button>
+                    <Button variant="danger" onClick={() => handleDeletePost(post._id)}>Delete Post</Button>
                     :
                     <></>
                 }

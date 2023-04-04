@@ -1,22 +1,26 @@
 import { useState } from "react";
-import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import "./NewPostForm.css";
 
-export default function NewPostForm({ handleAddPost, newPost, setNewPost }) {
+export default function NewPostForm({ handleAddPost, newPost, setCreatePost, createPost, setNewPost }) {
     function handleSubmit(evt) {
         evt.preventDefault();
         handleAddPost(newPost);
         setNewPost({content: ''});
+        setCreatePost(!createPost);
     }
 
     function handleChange(evt) {
         setNewPost({...newPost, [evt.target.name]: evt.target.value})
     }
     return (
-        <>
-            <form onSubmit={handleSubmit}>
-                <textarea type="text" value={newPost.content} name="content" onChange={handleChange} />
-                <button type="submit">Submit</button>
+        <div>
+            <form onSubmit={handleSubmit} className="NewPostForm">
+                <textarea className="textarea" type="text" value={newPost.content} name="content" onChange={handleChange} placeholder="Start a Post!" />
+                <div className="button">
+                    <Button variant="success" type="submit">Submit</Button>
+                </div>
             </form>
-        </>
+        </div>
     );
 }
