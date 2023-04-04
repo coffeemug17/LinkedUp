@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { signUp } from '../../utilities/users-service';
+import Button from 'react-bootstrap/Button';
 
 export default class SignUpForm extends Component {
   state = {
@@ -55,7 +56,7 @@ export default class SignUpForm extends Component {
             <input type="text" name="about" value={this.state.about} onChange={this.handleChange} required />
             <label>Current Company</label>
             <input type="text" name="company" value={this.state.company} onChange={this.handleChange} required />
-            <button type="submit" disabled={disable}>SIGN UP</button>
+            <Button variant='success' type="submit" disabled={disable}>SIGN UP</Button>
           </form>
         </div>
         <p className="error-message">&nbsp;{this.state.error}</p>

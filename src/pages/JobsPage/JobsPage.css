@@ -19,3 +19,8 @@
 .JobSearchForm .button{
     width: 250px;
 }
+
+.alljobs {
+    display: grid;
+    justify-content: center;
+}

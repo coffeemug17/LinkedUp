@@ -1,0 +1,12 @@
+.AuthPage {
+    margin: 10px;
+}
+.AuthPage > h1{
+    margin: 10px;
+    color:cadetblue;
+
+}
+
+.AuthPage .button {
+    margin: 10px;
+}

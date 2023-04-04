@@ -4,8 +4,9 @@
 	border: 3px solid gray;
 	border-radius: 10px;
     display: grid;
+	justify-content: center;
 	background-color: darkgrey;
-	opacity: 0.7;
+	opacity: 0.85;
 }
 
 .JobSearchCard header {

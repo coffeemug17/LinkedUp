@@ -9,20 +9,20 @@ export default function JobSearchCard({ result, handleAddSavedJobs }) {
         <div className="JobSearchCard">
             <header>{result.title} &nbsp; | &nbsp; {result.company} &nbsp; - &nbsp; {result.location}
             </header>
-            <div>{result.description}</div>
+            <div><h5>{result.description}</h5></div>
             <footer>
-                <button onClick={() => setExtendJob(!extendJob)}> Learn More?</button>
+                <Button variant="info" onClick={() => setExtendJob(!extendJob)}> Learn More?</Button>
                 {extendJob 
                     ? 
                     <div>
                         <div>
-                            <a href={result.redirect_url}>Apply here!!</a>
+                            <h5><a href={result.redirect_url}>Apply here!!</a></h5>
                         </div>
                         <div>
-                            Projected Salary: ${projected_salary}
+                            <h5>Projected Salary: ${projected_salary}</h5>
                         </div>
                         <div>
-                            <button onClick={() => handleAddSavedJobs(result._id)}>Save Job!</button>
+                            <Button variant="success" onClick={() => handleAddSavedJobs(result._id)}>Save Job!</Button>
                         </div>
                     </div>
                     :

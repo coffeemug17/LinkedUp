@@ -3,6 +3,7 @@ import { useState } from "react";
 import SearchUser from "../../components/SearchUser/SearchUser";
 import UserCard from "../../components/UserCard/UserCard";
 import * as usersAPI from "../../utilities/users-api";
+import "./MyNetworkPage.css";
 
 export default function MyNetworkPage({ user }) {
     const [followingUsers, setFollowingUsers] = useState([]);
@@ -25,13 +26,11 @@ export default function MyNetworkPage({ user }) {
     const mappedFollowers = followingUsers.map((follower, idx) =>
         <UserCard searchedUser={follower} key={idx} user={user} handleFollowUser={handleFollowUser} />);
     return (
-        <>
-            <h1>My Network</h1>
-
-            <h1>Search User</h1>
+        <div className="MyNetworkPage">
             <SearchUser user={user} />
             <hr />
+            <h1>My Network</h1>
             {mappedFollowers}
-        </>
+        </div>
     );
 }

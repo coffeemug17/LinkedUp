@@ -39,7 +39,10 @@ export default function JobsPage() {
                 </div>
             </form>
             <hr />
-            {allSearchResults}
+            <div className="alljobs">
+                {allSearchResults}
+
+            </div>
         </>
     );
 }
