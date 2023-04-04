@@ -15,7 +15,7 @@ async function search(req, res) {
     if (!searchItem) return null;
     const jobs = await Job.find({}, 'id');
     const existingJobIds = new Set(jobs.map(job => job.id));
-    const url = `${BASE_URL}/1?app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&results_per_page=5&what=${searchItem}&content-type=application/json`
+    const url = `${BASE_URL}/1?app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&results_per_page=10&what=${searchItem}&content-type=application/json`
     const response = await fetch(url);
     const searchData = await response.json()
     const jobsToCreate = searchData.results.filter(job => !existingJobIds.has(job.id)).map(job => {
