@@ -1,0 +1,21 @@
+.CommentForm {
+    margin: 5%;
+    border: 2px solid ;
+    border-radius: 12px;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.CommentForm .textarea {
+    width: 100%;
+    border-radius: 12px;
+    padding: 5px;
+    display: grid;
+    grid-area: span 2;
+}
+
+.CommentForm .button{
+    width: 250px;
+    display: grid;
+}

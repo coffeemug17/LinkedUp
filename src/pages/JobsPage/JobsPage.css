@@ -1,0 +1,21 @@
+.JobSearchForm {
+    margin: 5%;
+    border: 2px solid ;
+    border-radius: 12px;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+}
+
+.JobSearchForm .textarea {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 12px;
+    padding: 5px;
+    display: grid;
+    grid-area: span 2;
+}
+
+.JobSearchForm .button{
+    width: 250px;
+}

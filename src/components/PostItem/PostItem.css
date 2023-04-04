@@ -1,0 +1,4 @@
+.deletePost {
+    display: grid;
+    justify-content: end;
+}

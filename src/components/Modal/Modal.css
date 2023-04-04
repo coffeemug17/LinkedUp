@@ -21,3 +21,24 @@
 	border-top: 3px solid gray;
 	border-bottom: 3px solid gray;
 }
+.postButtons {
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.postButtons Button {
+	display: grid;
+	justify-content: start;
+	margin: 10px;
+}
+.postButtons h5 {
+	display: grid;
+	justify-content: start;
+	margin: 10px;
+}
+
+.commentForm {
+	display: grid;
+	grid-column-start: 1;
+	grid-column-end: 5;
+}

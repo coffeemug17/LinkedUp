@@ -3,6 +3,8 @@ import { useState } from "react";
 import * as commentsAPI from "../../utilities/comments-api";
 import * as postsAPI from "../../utilities/posts-api";
 import CommentCard from "../CommentCard/CommentCard";
+import Button from 'react-bootstrap/Button';
+import "./CommentForm.css";
 
 export default function CommentForm({ post, setPosts, posts, setComment }) {
     const [newComment, setNewComment] = useState({content: ''});
@@ -28,9 +30,11 @@ export default function CommentForm({ post, setPosts, posts, setComment }) {
 
     return (
         <>
-            <form onSubmit={handleCommentFormSubmit}>
-                <input type="text" placeholder="Enter a Comment!" name="content" value={newComment.content} onChange={handleCommentFormChange} />
-                <button type="submit">Submit</button>
+            <form onSubmit={handleCommentFormSubmit} className="CommentForm">
+                <input className="textarea" type="text" placeholder="Enter a Comment!" name="content" value={newComment.content} onChange={handleCommentFormChange} />
+                <div className="button">
+                    <Button variation="success" type="submit">Submit</Button>
+                </div>
             </form>
             <hr />
         </>

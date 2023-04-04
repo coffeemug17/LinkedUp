@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import JobSearchCard from "../../components/JobSearchCard/JobSearchCard";
 import * as jobsAPI from "../../utilities/jobs-api"
+import Button from 'react-bootstrap/Button';
+import "./JobsPage.css";
 
 export default function JobsPage() {
     const [searchResults, setSearchResults] = useState([]);
@@ -29,10 +31,12 @@ export default function JobsPage() {
         <JobSearchCard result={result} key={idx} handleAddSavedJobs={handleAddSavedJobs} />);
     return (
         <>
-            <h1>All Jobs</h1>
-            <form onSubmit={handleSubmitJobForm}>
-                <input type="text" onChange={handleFormChange} placeholder="Search for a Job!" value={searchItem}/>
-                <button type="submit">Submit Query</button>
+            <form onSubmit={handleSubmitJobForm} className="JobSearchForm">
+                
+                <input className="textarea" type="text" onChange={handleFormChange} placeholder="Search for a Job!" value={searchItem}/>
+                <div className="button">
+                    <Button variant="success" type="submit">Submit Query</Button>
+                </div>
             </form>
             <hr />
             {allSearchResults}

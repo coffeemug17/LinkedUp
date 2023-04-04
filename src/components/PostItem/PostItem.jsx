@@ -4,6 +4,7 @@ import CommentCard from "../CommentCard/CommentCard";
 import Button from 'react-bootstrap/Button';
 import * as commentsAPI from "../../utilities/comments-api";
 import * as postsAPI from "../../utilities/posts-api";
+import "./PostItem.css";
 
 
 export default function PostItem({ user, post, setPosts, posts, setComment, handleDeletePost, like, setLike }) {
@@ -33,14 +34,17 @@ export default function PostItem({ user, post, setPosts, posts, setComment, hand
                 handleDeleteComment={handleDeleteComment}
             >
                 <p>
-                {post.content}
-                {user._id === post.user._id 
-                    ?
-                    <Button variant="danger" onClick={() => handleDeletePost(post._id)}>Delete Post</Button>
-                    :
-                    <></>
-                }
+                <h5>{post.content}</h5>
                 </p>
+                <div className="deletePost">
+                    {user._id === post.user._id 
+                        ?
+                        <Button variant="danger" onClick={() => handleDeletePost(post._id)}>Delete Post</Button>
+                        :
+                        <></>
+                    }
+
+                </div>
             </Modal>
             <hr />
         </>
