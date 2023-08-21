@@ -26,9 +26,9 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+  background-image: url(./pexels-harry-cooke-6195041.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   padding: 2vmin;
 }
 

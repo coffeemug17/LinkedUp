@@ -46,7 +46,6 @@ export default function PostItem({ user, post, setPosts, posts, setComment, hand
 
                 </div>
             </Modal>
-            <hr />
         </>
     );
 }

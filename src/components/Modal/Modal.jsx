@@ -21,7 +21,7 @@ export default function Modal({ user, company, children, title, about, viewComme
             <footer>
                 <div className="postButtons">
                     <Button variant="dark" onClick={() => setViewComment(!viewComment)}
-                    >Comments💭</Button>
+                    >Comments 💭</Button>
                     <Button variant="dark" onClick={() => handleAddLike(post._id)}>Like 👍</Button>
                     <h5>
                         {(post.likes.length !== 1)

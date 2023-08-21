@@ -5,7 +5,9 @@ export default function CommentCard({ comment, user, userComment, handleDeleteCo
     return (
         <div className="CommentCard">
             <div className='comment'>
-            <h5>{userComment} &nbsp; - &nbsp; {comment.content}</h5>
+            <h5>{userComment}</h5> 
+            &nbsp; - &nbsp; 
+            <h5>{comment.content}</h5>
             </div>
             <div className="deleteComment">
                 {user._id === comment.user._id 
@@ -15,7 +17,6 @@ export default function CommentCard({ comment, user, userComment, handleDeleteCo
                     <></>
                 }
             </div>
-            <hr />
         </div>
     );
 }

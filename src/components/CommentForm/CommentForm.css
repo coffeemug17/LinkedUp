@@ -1,10 +1,11 @@
 .CommentForm {
-    margin: 5%;
+    margin: 8px;
     border: 2px solid ;
     border-radius: 12px;
     padding: 5px;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    gap: 1.25vmin;
 }
 
 .CommentForm .textarea {
@@ -16,6 +17,6 @@
 }
 
 .CommentForm .button{
-    width: 250px;
     display: grid;
+    justify-content: center;
 }

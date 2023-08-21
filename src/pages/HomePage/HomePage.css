@@ -1,6 +1,28 @@
-.HomePage > h1 {
-    color:cadetblue;
+.Homepage {
+    text-align: center;
+    padding: 20px;
 }
-.HomePage > h3 {
-    color:cadetblue;
+
+.welcome-container {
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    margin-top: 20px;
 }
+
+.welcome-text {
+    margin-right: 20px; /* Add spacing between text and image */
+}
+
+.welcome-description {
+    margin-top: 20px;
+    color: #5f788f;
+    font-weight: bolder;
+}
+
+.screenshot {
+    max-width: 350px; /* Adjust the maximum width of the image */
+    width: 100%; /* Make sure the image resizes within the container */
+    height: 200px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Adjust the box shadow */
+  }
