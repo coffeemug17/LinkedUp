@@ -63,13 +63,6 @@ LinkedUp is a dynamic MERN stack web application that offers users a range of fe
   >
 </details>
 
-<details open>
-  <summary> Deployed Link (Heroku) </summary>
-  <a href="https://linked-up.herokuapp.com/"
-    > https://linked-up.herokuapp.com/</a
-  >
-</details>
-
 ## :satellite: Upcoming Features
 
 - [:star:] Display posts associated with the users the logged in user follows
