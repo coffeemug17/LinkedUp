@@ -2,10 +2,6 @@
 
 # LinkedUp
 
-### [CLICK TO DEMO](https://linked-up.herokuapp.com/)
-
-
-
 ## :pencil: Description
 
 LinkedUp is a dynamic MERN stack web application that offers users a range of features, from creating and deleting posts and comments to searching for jobs and following other users. Built using HTML/CSS/JS, Bootstrap, React, Express and Nodejs, LinkedUp provides a seamless and intuitive user experience with its sleek and modern design. Whether you're looking to manage your online presence, network with other users, or search for your next job opportunity, LinkedUp has you covered.
